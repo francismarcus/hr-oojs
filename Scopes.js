@@ -1,7 +1,5 @@
 // Blocks within a function create a new lexical scope 
 
-// Global Scope
-
 // Global Scope starts under here 
 function aHero () {  // Establish global scope functions to return some words so the function calls in local scopes work
 	return "Gal";
