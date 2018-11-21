@@ -18,17 +18,15 @@ obj.fn(3, 4);
 // the object to the left of the dot when you call the function is what 'this' refers to 90% of the time! 
 
 
-// none of these five following are what this is bound to:
-var obj = { // 1. the object created by the literal this appears within 
-    fn: function (a, b) { // 2. the function object this appears within
-        log(this); // 3. a new instance of the function this appears within *generally speaking*
+                            // none of these five following are what this is bound to:
+var obj = {                 // 1. the object created by the literal this appears within 
+    fn: function (a, b) {   // 2. the function object this appears within
+        log(this);          // 3. a new instance of the function this appears within *generally speaking*
     }
 };
 
-var ob2 = {
-    method: obj.fn
-} // 4. an object that happens to have that function as a property
-obj.fn(3, 4) // 5. an execution context or scope of that function call */
+var ob2 = {method: obj.fn}  // 4. an object that happens to have that function as a property
+obj.fn(3, 4)                // 5. an execution context or scope of that function call */
 
 
 // What this is bound to
