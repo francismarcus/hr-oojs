@@ -18,15 +18,17 @@ obj.fn(3, 4);
 // the object to the left of the dot when you call the function is what 'this' refers to 90% of the time! 
 
 
-                            // none of these five following are what this is bound to:
-var obj = {                 // 1. the object created by the literal this appears within 
-    fn: function (a, b) {   // 2. the function object this appears within
-        log(this);          // 3. a new instance of the function this appears within *generally speaking*
+// none of these five following are what this is bound to:
+var obj = { // 1. the object created by the literal this appears within 
+    fn: function (a, b) { // 2. the function object this appears within
+        log(this); // 3. a new instance of the function this appears within *generally speaking*
     }
 };
 
-var ob2 = {method: obj.fn}  // 4. an object that happens to have that function as a property
-obj.fn(3, 4)                // 5. an execution context or scope of that function call */
+var ob2 = {
+    method: obj.fn
+} // 4. an object that happens to have that function as a property
+obj.fn(3, 4) // 5. an execution context or scope of that function call */
 
 
 // What this is bound to
@@ -41,7 +43,7 @@ var r = {},
     b = {}
 
 fn(g, b) // When this is called, one is temporarily bound to g, and two is temporarily bound to b
-         // The this keyword behaves like a parameter in most of the important ways. 
+// The this keyword behaves like a parameter in most of the important ways. 
 
 // Now, we enter a scenario with this.
 var fn = function (one, two) {
@@ -71,8 +73,7 @@ Since fn is global, calling fn(g,b) would result in an output of global. */
 /* Say we want to call a function and it wasn't stored as a property of the
 obj we want this to be bound to.
 The way we can accomplish this is with call() */
-fn.call(, g, b) // When we call this line, we need to pass in an extra value in the beginning
-// We pass in whatever we want to access with this.
+
 fn.call(r, g, b)
 // This can "override" the left of the dot rule.
 r.method.call(y, g, b) // So if we called this, assuming that y was defined earlier,
